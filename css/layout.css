@@ -244,7 +244,7 @@ ul#nav li.current a { color: #F06000; }
 
 #resume a:link, #resume a:visited  { color: #838C95; }
 #resume h3 a:link, #resume h3 a:visited  { color: #313131; }
-#resume a:hover, #resume h3 a:hover{ color: #022ffb7; }
+#resume a:hover, #resume h3 a:hover{ color: #02ffb7; }
 
 #resume h1 {
    font: 18px/24px 'opensans-bold', sans-serif;
