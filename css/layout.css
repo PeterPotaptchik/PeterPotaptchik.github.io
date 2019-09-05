@@ -242,9 +242,8 @@ ul#nav li.current a { color: #F06000; }
    overflow: hidden;
 }
 
-#resume a, #resume a:visited  { color: #838C95; }
-#resume h3 a, #resume h3 a:visited  { color: #313131; }
-
+#resume a:link, #resume a:visited  { color: #838C95; }
+#resume h3 a:link, #resume h3 a:visited  { color: #313131; }
 #resume a:hover, #resume h3 a:hover{ color: #022ffb7; }
 
 #resume h1 {
