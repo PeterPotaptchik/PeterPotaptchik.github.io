@@ -179,7 +179,7 @@ ul#nav li a {
 }
 
 ul#nav li a:active { background-color: transparent !important; }
-ul#nav li.current a { color: #ff0000; }
+ul#nav li.current a { color: #e60000; }
 
 
 /* ------------------------------------------------------------------ */
