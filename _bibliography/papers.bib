@@ -10,12 +10,12 @@
     <b>Our work explains why sampling from ImageNet needs only 100 steps instead of 150k!</b>
     <br>
     <br>
-    Diffusion models have proven to be state-of-the-art at sampling from complex high-dimensional
+    Diffusion models have proven to be state-of-the-art for sampling from complex high-dimensional
     data distributions, e.g., audio, images, molecules, text and videos. An important
-    question is to determine their <em>iteration complexity</em>, which is the number of steps that
-    diffusion models require in order to converge. Prior work has shown that
-    the complexity is linear in the <em>extrinsic data dimension D</em>. However, often the
-    distribution of interest actually has much lower <em>d</em>-dimensional structure; this is known as the
+    question is to determine their <em>iteration complexity</em>, meaning the number of steps
+    diffusion models require to converge. Prior work has shown that
+    this complexity is linear in the <em>extrinsic data dimension D</em>. However, the
+    distribution of interest often has much lower <em>d</em>-dimensional structure, as suggested by the
     <em>manifold hypothesis</em>. We take the best of both worlds and show that the number of steps
     required is linear in the <em>intrinsic dimension d</em>. },
   preview={bunny_diffusion.gif},
