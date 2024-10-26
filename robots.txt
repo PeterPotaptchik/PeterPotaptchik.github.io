@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://peterpotaptchik.github.io/sitemap.xml
+Sitemap: https://peterpotaptchik.github.io/al-folio/sitemap.xml
