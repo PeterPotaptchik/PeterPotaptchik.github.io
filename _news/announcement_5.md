@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our <a href="{{ '/publications/' | relative_url }}">preprint</a> is out on arxiv.
+Our preprint <a href="{{ '/publications/' | relative_url }}">de Finetti’s theorem and the existence of regular conditional distributions and strong laws on exchangeable algebras</a> is out on arxiv.
