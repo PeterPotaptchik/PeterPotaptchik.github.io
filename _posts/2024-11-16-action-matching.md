@@ -1,11 +1,14 @@
 ---
 layout: post
 title: Action Matching
-description: Summary of Paper
+description: Notes on Action Matching
 date: 2024-11-16
 related_posts: false  
 ---
-My notes about <a href="https://arxiv.org/pdf/2210.06662">Action Matching: Learning Stochastic Dynamics from Samples</a>.
+My notes on <a href="https://arxiv.org/pdf/2210.06662">Action Matching: Learning Stochastic Dynamics from Samples</a>.
+
+## TL;DR
+Given dynamics/densities $$q_t$$, there are many different vector fields $$v_t$$ that provide us with ODEs or SDEs to simulate these dynamics. Action Matching proposes to choose $$v_t$$ to be the unique gradient field (of the form $$\nabla s_t$$) in each case. The paper provides tractable objectives (if one can sample from $$q_t$$), extensions, and connections to optimal transport.
 
 ## Continuity Equation
 Suppose that we have a continuous path of densities $$(q_t)_{t \geq 0}$$. We may want a vector field
@@ -16,7 +19,7 @@ $$
   \frac{d}{dt}x(t) = v_t(x(t)), \quad x(0) = x_0.
 $$
 
-The path of densities $$q_t$$ are equal to the laws of $$x(t)$$ iff the
+The densities $$q_t$$ are equal to the laws of $$x(t)$$ iff the
 <em>continuity equation</em> holds:
 
 $$
@@ -36,7 +39,7 @@ $$
   \end{aligned}
 $$
 
-In particular, this means that $$v$$ can be written as a gradient field $$\nabla s$$ and a divergence-free term $$w$$. Under some conditions, the decomposition is unique (up to a constant for $$s$$).
+In particular, this means that $$v$$ can be written as the sum of a gradient field $$\nabla s$$ and a divergence-free term $$w$$. Under some conditions, the decomposition is unique (up to a constant for $$s$$).
 
 This result can be extended to consider the divergence operator with respect to some density $$q$$. In particular,
 any vector field $$v$$ can be uniquely decomposed as
@@ -54,7 +57,7 @@ $$\text{div}(q_ta_t) = 0$$ will still satisfy the continuity equation.
 
 However, the Helmholtz Decomposition tells us that all $$v_t$$ that satisfy the continuity equation will have
 the same unique gradient field $$\nabla s_t$$. In particular, if $$v^{(1)}_t, v^{(2)}_t$$ both satisfy the
-continuity equation and their Helmholtz Decomposition's are $$v^{(i)}_t = \nabla s^{(i)}_t + w^{(i)}_t$$, then
+continuity equation and their Helmholtz Decompositions are $$v^{(i)}_t = \nabla s^{(i)}_t + w^{(i)}_t$$, then
 
 $$
   \begin{aligned}
@@ -79,7 +82,7 @@ $$
 ## Extensions
 
 The paper also introduces entropic Action Matching (eAM). Instead of evolving an ODE to satisfy the dynamics
-$$q_t$$. One could also evolve an SDE:
+$$q_t$$, one could also evolve an SDE:
 
 $$
   dX(t) = v_t(X(t))dt + \sigma_t dB_t, \quad X(0) \sim q_0.
@@ -102,4 +105,6 @@ $$v_t$$ to be the unique scalar field $$v_t = \nabla s_t$$ that satisfies the Fo
 provides a tractable objective.
 
 The paper also introduces unbalanced Action Matching where particles can be created and destroyed according to some growth rate $$g_t(x)$$ for position $$x$$ at time $$t$$. Such dynamics are governed by the ODE
-$$\frac{\partial}{\partial t} q_t = - \text{div}(q_t v_t) + q_t g_t$$. They also extend AM to more general convex costs. See the paper for connections to Optimal Transport.
+$$\frac{\partial}{\partial t} q_t = - \text{div}(q_t v_t) + q_t g_t$$.
+
+The paper extends AM to more general convex costs and discusses connections to optimal transport.
